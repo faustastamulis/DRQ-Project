@@ -1,25 +1,44 @@
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Header } from './components/header';
+import { Footer } from './components/footer';
+import { Content } from './components/content';
+import { Contact } from './components/contact';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar, Nav } from 'react-bootstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Create } from './components/create';
+import { Read } from './components/read';
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+
+          <Navbar bg="primary" variant="dark">
+            <Navbar.Brand href="#home">Shoes</Navbar.Brand>
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/read">Read</Nav.Link>
+              <Nav.Link href="/create">Create</Nav.Link>
+              <Nav.Link href="/contact">Contact</Nav.Link>
+            </Nav>
+          </Navbar>
+
+          <br />
+          <Switch>
+            <Route path='/' component={Content} exact />
+            <Route path='/create' component={Create} exact />
+            <Route path='/read' component={Read} exact />
+            <Route path='/contact' component={Contact} exact />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

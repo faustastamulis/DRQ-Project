@@ -1,0 +1,6 @@
+DRQ Project:
+
+1) Home Page describes how the page works
+2) 4 Components 1) Home Page 2) Shoe Page 3)Edit Page 4)Contact Page.
+2) The Nav Bars Colours are set to same colour as the nav bar im not sure how to change this.
+3) The server is connected but doesnt display the shoes properly.
